@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    color-scheme: dark;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #0b0f19;
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Glassmorphism Classes */
+.card-glass {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.header-glass {
+  background: rgba(11, 15, 25, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-glass {
+  background: rgba(11, 15, 25, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ========================================================
+   Rich Background Themes & Ambiance
+   ======================================================== */
+
+/* 1. Aurora Borealis Theme (Luminous Emerald, Cyan & Violet Glow) */
+.theme-aurora {
+  background-color: #070c18;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.24) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.26) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.22) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.18) 0px, transparent 50%),
+    radial-gradient(at 50% 30%, rgba(14, 165, 233, 0.14) 0px, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* 2. Cyber Midnight Ocean Theme (Deep Sapphire & Cobalt Glow) */
+.theme-midnight {
+  background-color: #060c1c;
+  background-image: 
+    radial-gradient(at 80% 10%, rgba(37, 99, 235, 0.3) 0px, transparent 50%),
+    radial-gradient(at 15% 30%, rgba(14, 165, 233, 0.24) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(30, 58, 138, 0.35) 0px, transparent 60%),
+    radial-gradient(at 90% 80%, rgba(99, 102, 241, 0.2) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* 3. Sunset Twilight Theme (Warm Amber, Fiery Rose & Mystic Purple) */
+.theme-sunset {
+  background-color: #130a1c;
+  background-image: 
+    radial-gradient(at 90% 10%, rgba(245, 158, 11, 0.28) 0px, transparent 50%),
+    radial-gradient(at 10% 25%, rgba(244, 63, 94, 0.25) 0px, transparent 50%),
+    radial-gradient(at 60% 80%, rgba(139, 92, 246, 0.3) 0px, transparent 55%),
+    radial-gradient(at 20% 95%, rgba(234, 88, 12, 0.2) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* 4. Neon Cyberpunk Theme (Electric Magenta, Ultraviolet & Cyan) */
+.theme-cyberpunk {
+  background-color: #090716;
+  background-image: 
+    radial-gradient(at 85% 15%, rgba(236, 72, 153, 0.28) 0px, transparent 50%),
+    radial-gradient(at 10% 20%, rgba(6, 182, 212, 0.24) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(168, 85, 247, 0.3) 0px, transparent 55%),
+    radial-gradient(at 90% 90%, rgba(244, 63, 94, 0.2) 0px, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* 5. OLED Obsidian Theme (Minimalist Ultra-Deep Black & Crystal Mist) */
+.theme-obsidian {
+  background-color: #030508;
+  background-image: 
+    radial-gradient(at 50% 0%, rgba(51, 65, 85, 0.25) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(30, 41, 59, 0.25) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* 6. Frost Daylight Theme (Airy Sky Glass Light Mode) */
+.theme-light {
+  background-color: #f1f5f9;
+  background-image: 
+    radial-gradient(at 90% 10%, rgba(56, 189, 248, 0.22) 0px, transparent 50%),
+    radial-gradient(at 10% 20%, rgba(99, 102, 241, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(224, 231, 255, 0.6) 0px, transparent 60%);
+  background-attachment: fixed;
+  color: #0f172a;
+}
+
+/* Weather-specific Dynamic Background Themes for Auto Mode */
+.weather-bg-sunny {
+  background-color: #090e1c;
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.28), transparent 50%),
+    radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.22), transparent 45%),
+    radial-gradient(circle at 60% 85%, rgba(251, 191, 36, 0.15), transparent 50%);
+  background-attachment: fixed;
+}
+
+.weather-bg-cloudy {
+  background-color: #080c16;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(100, 116, 139, 0.25), transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(51, 65, 85, 0.35), transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(30, 41, 59, 0.3), transparent 50%);
+  background-attachment: fixed;
+}
+
+.weather-bg-rain {
+  background-color: #060b18;
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.3), transparent 50%),
+    radial-gradient(circle at 30% 50%, rgba(30, 58, 138, 0.35), transparent 60%),
+    radial-gradient(circle at 70% 90%, rgba(2, 132, 199, 0.22), transparent 50%);
+  background-attachment: fixed;
+}
+
+.weather-bg-storm {
+  background-color: #080716;
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(147, 51, 234, 0.32), transparent 50%),
+    radial-gradient(circle at 80% 40%, rgba(234, 88, 12, 0.2), transparent 45%),
+    radial-gradient(circle at 20% 85%, rgba(91, 33, 182, 0.3), transparent 55%);
+  background-attachment: fixed;
+}
+
+.weather-bg-snow {
+  background-color: #08101e;
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(186, 230, 253, 0.28), transparent 50%),
+    radial-gradient(circle at 20% 35%, rgba(56, 189, 248, 0.2), transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(147, 197, 253, 0.18), transparent 55%);
+  background-attachment: fixed;
+}
+
+.weather-bg-fog {
+  background-color: #070e17;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(45, 212, 191, 0.2), transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(71, 85, 105, 0.3), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.15), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Animations */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile Safe Area */
+.safe-bottom {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+/* Leaflet dark mode overrides */
+.leaflet-container {
+  background-color: #0b0f19 !important;
+}
+
+.leaflet-bar a {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+.leaflet-bar a:hover {
+  background-color: #0284c7 !important;
+  color: #fff !important;
+}
+
+/* Ambient Floating Glow Animations */
+@keyframes orbFloat1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(45px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-25px, 20px) scale(0.95);
+  }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-50px, 35px) scale(0.92);
+  }
+  66% {
+    transform: translate(30px, -25px) scale(1.08);
+  }
+}
+
+@keyframes auraPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-orb-1 {
+  animation: orbFloat1 24s ease-in-out infinite;
+}
+
+.animate-orb-2 {
+  animation: orbFloat2 28s ease-in-out infinite;
+}
+
+.animate-aura-pulse {
+  animation: auraPulse 8s ease-in-out infinite;
+}
+
+/* Light Theme overrides */
+.theme-light .card-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(100, 116, 139, 0.15);
+  color: #0f172a;
+}
+
+.theme-light .header-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  color: #0f172a;
+}
+
+.theme-light .sidebar-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(226, 232, 240, 0.9);
+  color: #0f172a;
+}
+
